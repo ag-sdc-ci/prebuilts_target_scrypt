@@ -1,0 +1,31 @@
+// Auto-generated prebuilt APEX Blueprint for external/scrypt
+// Staged from Extractive APEX package: ext-scrypt (org.blisslabs.ag.ext.scrypt)
+
+package {
+    default_applicable_licenses: ["external_scrypt_license"],
+}
+
+license {
+    name: "external_scrypt_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+cc_prebuilt_library_static {
+    name: "libscrypt_static",
+    shared_libs: ["libcrypto"],
+    sdk_version: "17",
+    host_supported: true,
+    vendor_available: true,
+    srcs: ["lib/libscrypt_static.a"],
+    export_include_dirs: [
+        "include",
+        "lib/crypto",
+    ],
+}
